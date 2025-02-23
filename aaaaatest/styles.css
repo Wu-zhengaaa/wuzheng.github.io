@@ -27,6 +27,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     overflow-x: hidden;
+    forced-color-adjust: none;
 }
 
 /* 粒子背景 */
