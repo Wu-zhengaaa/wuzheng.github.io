@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏个人主页</title>
+    
+    <!-- DNS 预解析 -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- 引入字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 引入必要的库 -->
+    <link href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.137.0/build/three.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css?v=20240318">
+    <!-- 添加main.js引用 -->
+    <script src="main.js?v=20240318" defer></script>
+</head>
+<body>
+    <!-- 动态背景 -->
+    <div class="dynamic-bg">
+        <div class="bg-overlay"></div>
+        <div class="bg-image"></div>
+    </div>
+    <!-- 粒子背景 -->
+    <div id="particles-js"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="nav-bar">
+        <div class="logo">
+            <span class="game-id">Dongk#88028</span>
+            <div class="weapon-icon"></div>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#stats">战绩展示</a></li>
+            <li><a href="#services">服务价格</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <!-- 首页区域 -->
+        <section id="home" class="hero">
+            <div class="rank-badge">
+                <!-- 3D徽章将通过Three.js渲染 -->
+                <canvas id="badge-canvas"></canvas>
+            </div>
+            <div class="stats-counter">
+                <div class="win-rate">
+                    <span class="number">76.5</span>%
+                    <span class="label">胜率</span>
+                </div>
+            </div>
+            <div class="cta-button">
+                <button class="pulse-button">查看我的战斗记录</button>
+            </div>
+        </section>
+
+        <!-- 精彩集锦区域 -->
+        <section id="highlights" class="highlights-section">
+            <div class="highlights-container">
+                <h2 class="section-title">精彩时刻</h2>
+                <!-- Swiper轮播 -->
+                <div class="swiper highlights-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- 精彩集锦视频 -->
+                        <div class="swiper-slide highlight-card">
+                            <div class="video-container">
+                                <video class="highlight-video" controls preload="none" poster="bj/image1.jpg">
+                                    <source data-src="jijin/1.mp4" type="video/mp4">
+                                </video>
+                                <div class="video-overlay">
+                                    <button class="play-btn">
+                                        <span class="play-icon">▶</span>
+                                    </button>
+                                    <div class="video-info">
+                                        <span class="kill-count">精彩操作</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide highlight-card">
+                            <div class="video-container">
+                                <video class="highlight-video" controls preload="none" poster="bj/image1.jpg">
+                                    <source data-src="jijin/2.mp4" type="video/mp4">
+                                </video>
+                                <div class="video-overlay">
+                                    <button class="play-btn">
+                                        <span class="play-icon">▶</span>
+                                    </button>
+                                    <div class="video-info">
+                                        <span class="kill-count">精彩操作</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide highlight-card">
+                            <div class="video-container">
+                                <video class="highlight-video" controls preload="none" poster="bj/image1.jpg">
+                                    <source data-src="jijin/3.mp4" type="video/mp4">
+                                </video>
+                                <div class="video-overlay">
+                                    <button class="play-btn">
+                                        <span class="play-icon">▶</span>
+                                    </button>
+                                    <div class="video-info">
+                                        <span class="kill-count">精彩操作</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 添加导航按钮 -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- 添加分页器 -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 社交媒体区域 -->
+        <section id="social" class="social-section">
+            <div class="social-container">
+                <h2 class="section-title">关注我</h2>
+                <div class="social-icons">
+                    <a href="https://www.douyin.com/user/MS4wLjABAAAAIKtsuJu1Hqk4X71u0yxbY7sQHgl6RQXzFj2cwmrrQKsxJMm9-KMPEz11u-9r04Vr?from_tab_name=main&is_search=0&list_name=follow&nt=2" 
+                       target="_blank" 
+                       class="social-icon douyin">
+                        <i class="icon-douyin">抖音</i>
+                        <span class="social-hover">关注我的抖音号</span>
+                    </a>
+                    <div class="social-icon wechat">
+                        <i class="icon-wechat">微信</i>
+                        <span class="social-hover">扫码加我微信</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 战绩展示区域 -->
+        <section id="stats" class="stats-section">
+            <div class="stats-container">
+                <h2 class="section-title">战绩展示</h2>
+                <div class="stats-gallery">
+                    <!-- 添加所有战绩图片 -->
+                    <div class="stats-item">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+                             data-src="zhanji/a.jpg?v=20240318" 
+                             alt="战绩展示" 
+                             class="stats-image lazy" 
+                             loading="lazy">
+                        <div class="stats-overlay">
+                            <div class="stats-info">
+                                <span class="stats-detail">战绩展示</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-item">
+                        <img src="zhanji/b.jpg?v=20240318" alt="战绩展示" class="stats-image" loading="lazy">
+                        <div class="stats-overlay">
+                            <div class="stats-info">
+                                <span class="stats-detail">战绩展示</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-item">
+                        <img src="zhanji/c.jpg?v=20240318" alt="战绩展示" class="stats-image" loading="lazy">
+                        <div class="stats-overlay">
+                            <div class="stats-info">
+                                <span class="stats-detail">战绩展示</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-item">
+                        <img src="zhanji/d.jpg?v=20240318" alt="战绩展示" class="stats-image" loading="lazy">
+                        <div class="stats-overlay">
+                            <div class="stats-info">
+                                <span class="stats-detail">战绩展示</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-item">
+                        <img src="zhanji/e.jpg?v=20240318" alt="战绩展示" class="stats-image" loading="lazy">
+                        <div class="stats-overlay">
+                            <div class="stats-info">
+                                <span class="stats-detail">战绩展示</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-item">
+                        <img src="zhanji/f.jpg?v=20240318" alt="战绩展示" class="stats-image" loading="lazy">
+                        <div class="stats-overlay">
+                            <div class="stats-info">
+                                <span class="stats-detail">战绩展示</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 服务价格区域 -->
+        <section id="services" class="services-section">
+            <div class="services-container">
+                <h2 class="section-title">服务价格</h2>
+                <div class="services-gallery">
+                    <!-- 服务价格图片 -->
+                    <div class="service-item">
+                        <img src="fuwu/1.jpg?v=20240318" alt="服务价格" class="service-image" loading="lazy">
+                        <div class="service-overlay">
+                            <button class="contact-btn">立即咨询</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- 图片预览模态窗口 -->
+    <div class="image-modal" id="imageModal">
+        <div class="image-modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="战绩预览">
+        </div>
+    </div>
+    <!-- 视频模态窗口 -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <video id="modalVideo" controls>
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <!-- 微信二维码模态窗口 -->
+    <div class="image-modal" id="weixinModal">
+        <div class="image-modal-content">
+            <img class="modal-image" src="bj/weixin.jpg?v=20240318" alt="微信二维码">
+        </div>
+    </div>
+</body>
+</html> 
