@@ -4,6 +4,7 @@
     --background-color: #0a0a0a;
     --text-color: #ffffff;
     --neon-shadow: 0 0 10px var(--primary-color);
+    color-scheme: dark;
 }
 
 * {
@@ -28,6 +29,7 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     forced-color-adjust: none;
+    -webkit-forced-color-adjust: none;
 }
 
 /* 粒子背景 */
@@ -606,4 +608,10 @@ body {
 
 .interactive-element {
     touch-action: manipulation;
+}
+
+@media (forced-colors: active) {
+    :root {
+        forced-colors: none;
+    }
 } 
